@@ -1,5 +1,12 @@
 Blog::Application.routes.draw do
-  resources :posts
+  devise_for :admins
+  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
+
+  devise_for :users
+
+  resources :posts do
+    resources :comments
+  end
 
 
   # The priority is based upon order of creation:
