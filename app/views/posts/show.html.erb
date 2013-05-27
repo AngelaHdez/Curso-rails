@@ -1,3 +1,4 @@
+<div id="new">
 <p id="notice"><%= notice %></p>
 <p>
   <b>Name:</b>
@@ -13,18 +14,21 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+</div>
 <h2>Comments</h2>
+
 <%= render @post.comments %>
 
  
   <h2> Add Comment: </h2>
 
   <%= simple_form_for ([@post, @post.comments.build]) do |f| %>
-  <%= f.input :commenter, text_field: 'Your username please' %>
-  <%= f.input :body, text_area: 'No special characters.' %>
+  <%= f.input :commenter, text_field: 'Your username please',:class => "tinymce" %>
+  <%= f.input :body, text_area: 'No special characters.', :class => "tinymce" %>
   <%= f.button :submit %>
 <% end %>
 
-
+<footer>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</footer>

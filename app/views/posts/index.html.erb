@@ -1,35 +1,35 @@
-<h1>Listing posts</h1>
+<div id="index">
+  <h1>Listing posts</h1>
+  <br/>
+  <br/>
+  <table class="table table-striped" >
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.name %></td>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
 
 
-<br/>
-<%= link_to 'New Post', new_post_path %>
+  <br/>
+  <%= link_to 'New Post', new_post_path %>
 
-<br /><!--<%= will_paginate @posts %>-->
-<div class="digg_pagination" style="background-color: #AAA; border: 1px; box-shadow: 5px; text-align:center;">
-    <div class="page_info">
-      <%= page_entries_info @posts %>
-    </div>
-    <%= will_paginate @posts, :container => false %>
+  <br /><!--<%= will_paginate @posts %>-->
+  <div class="pager">
+      <%= will_paginate @posts, :container => false %>
   </div>
+</div>
