@@ -8,6 +8,11 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'rails_admin'
 gem 'fastercsv'
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
+gem 'will_paginate', '~> 3.0.0'
+gem 'bootstrap-sass', '2.3.1.0'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

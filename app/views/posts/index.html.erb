@@ -22,6 +22,14 @@
 <% end %>
 </table>
 
-<br />
 
+<br/>
 <%= link_to 'New Post', new_post_path %>
+
+<br /><!--<%= will_paginate @posts %>-->
+<div class="digg_pagination" style="background-color: #AAA; border: 1px; box-shadow: 5px; text-align:center;">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+  </div>
