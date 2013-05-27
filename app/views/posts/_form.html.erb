@@ -11,26 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :required=>true %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :required=> true %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :required=>true, :class => "tinymce"  %>
-  </div>
-  <div class="field">
-    <%= f.label :published %>
-    <%= f.check_box :published %><br />
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 
-
+<%= simple_form_for @post do |f| %>
+  <%= f.input :name, text_field: 'Your username please' %>
+  <%= f.input :title, text_field: 'No special characters.' %>
+  <%= f.input :content, text_area: 'Your comment here',:required=>true, :class => "tinymce" %>
+  <%= f.input :published, check_box: 'Yes, published' %>
+  <%= f.button :submit %>
+<% end %>
 
 <% end %>
